@@ -7,9 +7,9 @@
 ## Introduction
 - [SLEMM](https://github.com/jiang18/slemm) has a function for fast window-based SNP-weigthing. 
 - GWABLUP's SNP weighting scheme is seemingly different but actually falls in largely the same framework as SLEMM.
-- The key difference between the two is described as follows. If x denotes a SNP's weight that SLEMM calculates based on windows, then GWABLUP's (unscaled) weight is approximately equal to $y=\frac{\pi}{\pi + (1-\pi) \exp(-x/2)}$. The relationship is approximate in that x approximates single-SNP association chi-square statistic.
+- The key difference between the two is described as follows. If x denotes a SNP's weight that SLEMM calculates based on windows, then GWABLUP's (unscaled) weight is approximately equal to $y=\frac{\pi}{\pi + (1-\pi) \exp(-x/2)}$. The relationship is approximate in that x approximates single-SNP association chi-square statistics.
 - Compared to SLEMM weights, the GWABLUP weights have the following features:
-  - The ratio of max and min weights is constrained to $1/\pi$. As a result, $\pi$ shoild be set to a sufficiently small value to accommodate very large effects (like *DGAT1* for dairy milk traits).
+  - The ratio of max and min weights is constrained to $1/\pi$. As a result, $\pi$ should be set to a sufficiently small value to accommodate very large effects (like *DGAT1* for dairy milk traits).
   - The x-to-y transformation reduces small weights toward 0 and amplifies large weights.
 
 ## Dataset
