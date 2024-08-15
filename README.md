@@ -1,13 +1,16 @@
-# gwablup_vs_slemm
-Comparative benchmarking of GWABLUP and SLEMM for genomic prediction
+# Comparative benchmarking of GWABLUP and SLEMM for genomic prediction
 
 ## References
 [GWABLUP](https://gsejournal.biomedcentral.com/articles/10.1186/s12711-024-00881-y)  
 [SLEMM](https://academic.oup.com/bioinformatics/article/39/3/btad127/7075542)
 
 ## Introduction
-- [SLEMM](https://github.com/jiang18/slemm) has a function for fast window-based SNP-weigthing for genomic prediction.
-- GWABLUP is also ba
+- [SLEMM](https://github.com/jiang18/slemm) has a function for fast window-based SNP-weigthing. 
+- GWABLUP's SNP weighting scheme is seemingly different but actually falls in largely the same framework as SLEMM.
+- The key difference between the two is described as follows. If x denotes a SNP's weight that SLEMM calculates based on windows, then GWABLUP's (unscaled) weight is approximately equal to $y=\frac{\pi}{\pi + (1-\pi) \exp(-x/2)}$. The relationship is approximate in that x approximates single-SNP association chi-square statistic.
+- Compared to SLEMM weights, the GWABLUP weights have the following features:
+  - The ratio of max and min weights is constrained to $1/\pi$. As a result, $\pi$ shoild be set to a sufficiently small value to accommodate very large effects (like *DGAT1* for dairy milk traits).
+  - The x-to-y transformation reduces small weights toward 0 and amplifies large weights.
 
 ## Dataset
 - Dairy bulls (https://doi.org/10.1534/g3.114.016261)
