@@ -33,4 +33,4 @@
 - The figure below shows the prediciton accuracies for milk yield.
 
 ## Discussion
-Implementing fast GWABLUP is straighforward in SLEMM, as only one line of code is required; however, more comparative benchmarking is needed for the change. 
+Implementing fast GWABLUP is straighforward in SLEMM, as only one additional line of code is required; however, more comparative benchmarking is needed for the change. 
