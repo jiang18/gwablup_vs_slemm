@@ -30,7 +30,8 @@
 
 ## Results
 - The difference of prediction accuracy between **SLEMM --iter_weigthing** and **GWABLUP** is minimal, approximately 0.1 percentage points, for all three dairy traits when using the optimal window size for each method.
-- The figure below shows the prediciton accuracies for milk yield.
+- The figure below illustrates the prediction accuracies for milk yield, using GWABLUP with a window size of 5 as the baseline for comparison.
+
 ![GWABLUP vs SLEMM for milk yield](gwablup_vs_slemm_mkg.png)
 
 ## Discussion
