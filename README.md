@@ -22,6 +22,15 @@
 - Repeated random subsampling validation
   - 80% as training, and the remaining 20% as validaiton
   - 20 replicates
+- Prediction accuracy is quantified by the Pearson correlation coefficient between the GEBVs and observed phenotypic values of individuals in the validation set. 
 
 ## Fast implementation of GWABLUP
+- The GWABLUP weights are calculated based on **GCTA --mlma**.  
+- We use the GWABLUP weights in SLEMM to enable fast GWABLUP. This implementation has a minor difference from the original GWABLUP in terms of MAF-based genotype scaling: it uses VanRaden's GRM 2 as backbone, while GWABLUP uses VanRaden's GRM 1.
 
+## Results
+- The difference of prediction accuracy between **SLEMM --iter_weigthing** and **GWABLUP** is minimal, approximately 0.1 percentage points, for all three dairy traits when using the optimal window size for each method.
+- The figure below shows the prediciton accuracies for milk yield.
+
+## Discussion
+Implementing fast GWABLUP is straighforward in SLEMM, as only one line of code is required; however, more comparative benchmarking is needed for the change. 
